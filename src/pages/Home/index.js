@@ -14,7 +14,7 @@ function Home(){
     const resource = 'movie/now_playing';
     const api_key = '9e410252d84569eef779475a902d9330';
     const languagePortuges = 'pt-BR';
-
+    const [loading, setLoading] = useState(true);
     /**
      * state que armazena os films
      */
@@ -46,8 +46,17 @@ function Home(){
         }
 
         loadMovies();
+        setLoading(false);
 
     }, []);
+
+    if(loading){
+        return(
+            <div className="loading">
+                <h2>carregando...</h2>
+            </div>
+        )
+    }
 
     return(
         <div className="container">

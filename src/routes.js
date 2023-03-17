@@ -6,6 +6,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 // import pages
 import Home from "./pages/Home";
 import Movie from "./pages/Movie";
+import Notfound from "./pages/Error/Notfound";
 
 // import components
 import Header from "./components/Header";
@@ -18,6 +19,9 @@ function RoutesApp(){
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movie/:id" element={<Movie />} />
+            
+            {/* not found */}
+            <Route path="*" element={<Notfound />} />
         </Routes>
         </BrowserRouter>
     )
