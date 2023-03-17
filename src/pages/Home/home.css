@@ -1,0 +1,45 @@
+.list-movie{
+    max-width: 800px;
+    /* 14px cima e baixo e auto nas laterais ficando centralizado */
+    margin: 14px auto;
+}
+
+.list-movie article{
+    width: 100%;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.list-movie strong{
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 22px;
+    /* display: block - esta aplicando o align center */
+    display: block;
+}
+
+.list-movie img{
+    width: 900px;
+    max-width: 100%;
+    max-height: 340px;
+    /* Para não esticar a img e ficar do tamanho que eu defini acima*/
+    object-fit: cover;
+    /* Juntando com o botao <a> */
+    display: block;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.list-movie a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    font-size: 24px;
+    background-color: #21272e;
+    text-decoration: none;
+    color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
