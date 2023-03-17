@@ -1,4 +1,6 @@
-// For use routes is necessary install "npm install react-router-dom"
+/**
+ * IMPORTANT For use routes is necessary install "npm install react-router-dom"
+ */
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 // import pages
