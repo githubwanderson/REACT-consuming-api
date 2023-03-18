@@ -44,6 +44,10 @@
     border-bottom-right-radius: 8px;
 }
 
+.list-movie a:hover{
+    background-color: #a52a2a;
+}
+
 .loading{
     display: flex;
     justify-content: center;
