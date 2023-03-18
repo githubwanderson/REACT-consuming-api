@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import './movie-info.css';
 
@@ -11,6 +11,10 @@ function Movie(){
     const languagePortuges = 'pt-BR';
     const [movie, setMovie] = useState({});
     const [loading, setLoading] = useState(true);
+    /**
+     * navigate - Para lançar um redirect 
+     */
+    const navigate = useNavigate();
 
     useEffect(()=>{
         async function loadMovie(){
@@ -28,10 +32,16 @@ function Movie(){
             .then((response)=>{
                 setMovie(response.data);
                 setLoading(false);
-                console.log(response)
+                // console.log(response);
             })
             .catch(()=>{
                 console.log('Movie not found.')
+                /**
+                 * ir para "/" home
+                 * replace: true - reload
+                 */
+                navigate("/",{ replace: true });
+                return;
             })
         }
 
@@ -61,7 +71,7 @@ function Movie(){
             <div className="area-buttons">
                 <button>Salvar</button>
                 <button>
-                    <a href="#">
+                    <a href={`https://youtube.com/results?search_query=${movie.title} Trailer`} target='_blank' rel='external'>
                         Trailer
                     </a>
                 </button>
