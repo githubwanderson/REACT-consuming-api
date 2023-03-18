@@ -50,7 +50,38 @@ function Movie(){
         return ()=>{
             console.log('Component desmontado')
         }
-    }, []);
+    }, [resource,api_key,languagePortuges,navigate]);
+
+    /**
+     * Vamos salvar um filme no LocalStorage
+     * 
+     */
+    function saveMovie(){
+        /**
+         * Pegamos no localStorage o item '@primeflix'
+         * savedMovie - Se ele existir passo para JSON se nao passo um array vazio
+         */
+        const myList = localStorage.getItem('@primeflix');
+        let savedMovie = JSON.parse(myList) || [];
+        /**
+         * some() - verifica no array se ha um indice com o mesmo valor
+         * if sim alert e return
+         */
+        const hasMovie = savedMovie.some( (savedMovie)=> savedMovie.id === movie.id  );
+        if(hasMovie){
+            alert('Este filme já esta na lista');
+            return;
+        }         
+        /**
+         * ARRAY.push(VALOR) - add valor no final do array 
+         */
+        savedMovie.push(movie);
+        /**
+         * Add item no localStorage mas antes altero para string
+         */
+        localStorage.setItem('@primeflix',JSON.stringify(savedMovie));
+        alert('Filme salvo com sucesso!');
+    }
 
     if(loading){
         return(
@@ -69,9 +100,9 @@ function Movie(){
             <strong>Avaliação: {parseFloat(movie.vote_average).toFixed(1)} / 10</strong>
 
             <div className="area-buttons">
-                <button>Salvar</button>
+                <button onClick={saveMovie}>Salvar</button>
                 <button>
-                    <a href={`https://youtube.com/results?search_query=${movie.title} Trailer`} target='_blank' rel='external'>
+                    <a href={`https://youtube.com/results?search_query=${movie.title} Trailer`} target='blank' rel='external'>
                         Trailer
                     </a>
                 </button>
