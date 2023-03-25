@@ -36,7 +36,7 @@ function Movie(){
                 // console.log(response);
             })
             .catch(()=>{
-                console.log('Movie not found.')
+                // console.log('Movie not found.')
                 /**
                  * ir para "/" home
                  * replace: true - reload
@@ -48,9 +48,9 @@ function Movie(){
 
         loadMovie();
 
-        return ()=>{
-            console.log('Component desmontado')
-        }
+        // return ()=>{
+        //     console.log('Component desmontado')
+        // }
     }, [resource,api_key,languagePortuges,navigate]);
 
     /**

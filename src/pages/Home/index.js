@@ -11,7 +11,7 @@ import "./home.css";
 
 function Home(){
 
-    const resource = 'movie/now_playing';
+    const resource = '/movie/popular';
     const api_key = '9e410252d84569eef779475a902d9330';
     const languagePortuges = 'pt-BR';
     const [loading, setLoading] = useState(true);
@@ -40,11 +40,19 @@ function Home(){
             /**
              * response.data.results - api data I want to work
              * slice() - method to show quantity desired. This exemplo I want zero to ten
-             */
-            console.log(response.data.results.slice(0,10))
-            setMovies(response.data.results.slice(0,10))
-        }
+             * Pegando 10 elementos iniciando no indice 0
+             */  
+            // setMovies(response.data.results.slice(0,10))
 
+            /**
+             * get only movies with note >= 7
+             */
+            let m = movies.filter((item)=>{
+                return (parseInt(item.vote_average) >= 7)
+            })
+        // let m = movies.filter((item)=> parseFloat(item.vote_average) > 7)
+            setMovies(m)
+        }
         loadMovies();
         setLoading(false);
 
