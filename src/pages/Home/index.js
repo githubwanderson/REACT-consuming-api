@@ -47,7 +47,7 @@ function Home(){
             /**
              * get only movies with note >= 7
              */
-            let m = movies.filter((item)=>{
+            let m = response.data.results.filter((item)=>{
                 return (parseInt(item.vote_average) >= 7)
             })
         // let m = movies.filter((item)=> parseFloat(item.vote_average) > 7)
