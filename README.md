@@ -14,7 +14,7 @@
 * Redirect para youtube para vizualizar o trailler
 * Salva e exclui filmes favoritos no localStrorage
 
-### Veja funcionando [wm-movies](https://app.netlify.com/sites/wm-movies/overview)
+### Veja funcionando [wm-movies](https://wm-movies.netlify.app/favorites)
 
 ---
 
