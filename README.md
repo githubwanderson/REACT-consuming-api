@@ -6,7 +6,7 @@
 * css puro
 * consumo de api
 * routes com `react-router-dom`
-* loader `react-toastify` (muito legal)
+* loader `react-toastify`
 
 ### A aplicação:
 
